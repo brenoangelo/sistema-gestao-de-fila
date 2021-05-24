@@ -1,12 +1,13 @@
 # To do
-# Criar tela inicial com os botões "convencinal" / "preferencial"
+# Colocar impressão do ticket
+# Arrumar o sistema de impressão da senha / caixa / mesa
 
 import os
 
 op = 0
 op2 = 0
-cod = 0
-
+codc = 0
+codv = 0
 con = []
 pref = []
 
@@ -30,23 +31,42 @@ while(op2 != 5):
         print("Caixa")
         
         if op == 1:
-            cod += 1
-            con.append('{}{}'.format("CXC", cod))
+            codc += 1
+            con.append('{}{}'.format("CXC", codc))
         elif op == 2:
-            cod += 1
-            pref.append('{}{}'.format("CXP", cod))
+            codv += 1
+            pref.append('{}{}'.format("CXP", codv))
         
     elif op2 == 2:
         #Guichê
         print("Guiche")
+
+        if op == 1:
+            codc += 1
+            con.append('{}{}'.format("CHC", codc))
+        elif op == 2:
+            codv += 1
+            pref.append('{}{}'.format("GHP", codv))
+        
     elif op2 == 3:
         #Gerencia
         print("Gerencia")
+
+        if op == 1:
+            codc += 1
+            con.append('{}{}'.format("GEC", codc))
+        elif op == 2:
+            codv += 1
+            pref.append('{}{}'.format("GEP", codv))
+
     elif op2 == 4:
         #Acompanhamento
         for i in con:
-            print("conv: "+i+con.index(i))
+            index = +con.index(i)
+            print("Senha: ",i)
+            print("Caixa: ",index)
             
         for i in pref:
-            print("pref: "+i)
-    
+            index = +pref.index(i)
+            print("Senha: ",i)
+            print("Caixa:",index)
