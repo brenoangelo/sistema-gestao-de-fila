@@ -3,7 +3,6 @@
 # Arrumar o sistema de impressão da senha / caixa / mesa
 
 import os
-
 op = 0
 op2 = 0
 codc = 0
